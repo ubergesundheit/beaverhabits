@@ -1,0 +1,26 @@
+name: Build container
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v**
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-container:
+    name: Build container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and push container image
+        uses: bCyberGmbH/build-container-image-action@main
+        with:
+          registry_username: ${{ github.repository_owner }}
+          registry_password: ${{ secrets.GITHUB_TOKEN }}
+          image_repository: ${{ github.repository }}
+          push_to_registry: ${{ github.event_name != 'pull_request' }}
