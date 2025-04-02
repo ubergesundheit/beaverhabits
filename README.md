@@ -83,6 +83,7 @@ To avoid [permission issues](https://github.com/daya0576/beaverhabits/discussion
 | **TRUSTED_EMAIL_HEADER**(str) | Delegate authentication to an authenticating reverse proxy that passes in the user's details in HTTP headers, e.g. `Cf-Access-Authenticated-User-Email`. An existing account is required. |
 | **TRUSTED_LOCAL_EMAIL**(str) | Disables authentication entirely. A new account with the specified email will be created if it does not exist. |
 | **INDEX_HABIT_DATE_REVERSE**(bool) | Reverse the order of dates to display (default value is false). |
+| **ANALYTICS_SNIPPET**(str) | Custom analytics snippet (like Umami or Google Analytics) to include in the <head> section of the page. |
 
 ## Development
 

@@ -57,6 +57,8 @@ class Settings(BaseSettings):
     INDEX_HABIT_DATE_COLUMNS: int = 5
     INDEX_HABIT_DATE_REVERSE: bool = False
 
+    ANALYTICS_SNIPPET: str = ''
+
     def is_dev(self):
         return self.ENV == "dev"
 
