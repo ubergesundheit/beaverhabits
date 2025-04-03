@@ -53,8 +53,10 @@ def custom_header():
     ui.add_head_html(
         '<meta name="description" content="A self-hosted habit tracking app without "Goals"">'
     )
-    if settings.ANALYTICS_SNIPPET:
-        ui.add_head_html(settings.ANALYTICS_SNIPPET)
+    if settings.UMAMI_ANALYTICS_ID:
+        ui.add_head_html(
+            f'<script defer src="https://cloud.umami.is/script.js" data-website-id="{settings.UMAMI_ANALYTICS_ID}"></script>'
+        )
 
 
 def separator():
